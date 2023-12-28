@@ -1,30 +1,32 @@
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-INCLUDE = ft_printf.h
+INCLUDE = inc/
+FOLDER = func/
+OBJFOLDER = obj/
 SRCS = \
-		ft_printf.c \
-		ft_putchar.c \
-		ft_puthex.c \
-		ft_putnbr.c \
-		ft_putptr.c \
-		ft_putstr.c \
-		ft_putunbr.c \
-		main.c \
+	ft_printf.c \
+	ft_putchar.c \
+	ft_puthex.c \
+	ft_putnbr.c \
+	ft_putptr.c \
+	ft_putstr.c \
+	ft_putunbr.c \
+	main.c \
 
-OBJ = $(SRCS:.c=.o)
+SOURCE = $(addprefix $(FOLDER), $(SRCS))
+OBJSOURCE = $(addprefix $(OBJFOLDER), $(notdir $(SOURCE:.c=.o)))
 
-$(NAME): $(OBJ) $(INCLUDE)
-	ar -rcs $(NAME) $(OBJ)
-	ranlib $(NAME)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
+$(NAME): 
+	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SOURCE)
+	@mv *.o obj/
+	@ar rc $(NAME) $(OBJSOURCE)
+	@ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJSOURCE)
 
 fclean: clean
 	rm -f $(NAME)
