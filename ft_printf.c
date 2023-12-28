@@ -24,7 +24,6 @@ void	ft_printf(const char *str, ...)
 {
 	va_list		args;
 	const char	*ch;
-	const char	*nextarg;
 	char		type;
 
 	va_start(args, str);
