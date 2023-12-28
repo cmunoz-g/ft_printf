@@ -38,7 +38,10 @@ int	ft_printf(const char *str, ...)
 			ch++;
 			count++;
 			if (*ch != '\0')
+			{
 				ft_printf_aux(args, *ch, &count);
+				ch++;
+			}
 		}
 		else
 		{
