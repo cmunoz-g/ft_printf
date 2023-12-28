@@ -7,7 +7,7 @@
 
 int		ft_printf(const char *str, ...);
 void	ft_putchar(char c, int *count);
-void	ft_puthex(int n, char *base, int *count);
+void	ft_puthex(unsigned long int n, char *base, int *count);
 void	ft_putnbr(int n, int *count);
 void	ft_putptr(void *ptr, int *count);
 void	ft_putstr(char *str, int *count);

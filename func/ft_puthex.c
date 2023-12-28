@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_puthex(int n, char *base, int *count)
+void	ft_puthex(unsigned long int n, char *base, int *count)
 {
 	if (n >= 16)
 	{
