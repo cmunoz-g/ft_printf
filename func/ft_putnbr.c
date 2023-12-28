@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(int n, int *count)
 {
 	char	c;
 
@@ -15,7 +15,7 @@ void	ft_putnbr(int n)
 		n *= -1;
 	}
 	if (n >= 10)
-		ft_putnbr((n / 10));
+		ft_putnbr((n / 10), count);
 	c = (n % 10) + '0';
-	ft_putchar(c);
+	ft_putchar(c, count);
 }

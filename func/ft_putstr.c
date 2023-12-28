@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *str, int *count)
 {
 	size_t	i;
 
@@ -9,5 +9,6 @@ void	ft_putstr(char *str)
 	{
 		write(1, &str[i], 1);
 		i++;
+		(*count)++;
 	}
 }

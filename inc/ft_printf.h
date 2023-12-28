@@ -5,13 +5,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-void	ft_printf(const char *str, ...);
-void	ft_putchar(char c);
-void	ft_puthex(int n, char *base);
-void	ft_putnbr(int n);
-void	ft_putptr(void *ptr);
-void	ft_putstr(char *str);
-void	ft_putunbr(unsigned int	n);
+int		ft_printf(const char *str, ...);
+void	ft_putchar(char c, int *count);
+void	ft_puthex(int n, char *base, int *count);
+void	ft_putnbr(int n, int *count);
+void	ft_putptr(void *ptr, int *count);
+void	ft_putstr(char *str, int *count);
+void	ft_putunbr(unsigned int	n, int *count);
 
 #endif
 
