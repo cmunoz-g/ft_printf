@@ -28,7 +28,7 @@ int main()
 		printf("return values coinciden\n");
 	else
 		printf("return values no coinciden\n");
-	
+
 	r1 = printf("str:%s.\n", s);
 	r2 = ft_printf("str:%s.\n", s);
 	if (r1 == r2)
@@ -91,6 +91,7 @@ int main()
 		printf("return values coinciden\n");
 	else
 		printf("return values no coinciden\n");*/
+
 
 	return 0;
 }

@@ -19,7 +19,7 @@ void	ft_printf_aux(va_list args, const char type, int *count)
 	else if (type == '%')
 		ft_putchar('%', count);
 }
-//cambiar a int y sacar el return value
+
 int	ft_printf(const char *str, ...)
 {
 	va_list		args;
@@ -36,7 +36,6 @@ int	ft_printf(const char *str, ...)
 		if (*ch == '%')
 		{
 			ch++;
-			count++;
 			if (*ch != '\0')
 			{
 				ft_printf_aux(args, *ch, &count);
