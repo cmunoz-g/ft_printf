@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 void	ft_putstr(char *str)
 {
 	size_t	i;
