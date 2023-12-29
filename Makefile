@@ -19,7 +19,7 @@ OBJSOURCE = $(addprefix $(OBJFOLDER), $(notdir $(SOURCE:.c=.o)))
 
 $(NAME): 
 	$(CC) $(CFLAGS) -I$(INCLUDE) -c $(SOURCE)
-	@mv *.o obj/
+	@mv -i *.o obj/
 	@ar rc $(NAME) $(OBJSOURCE)
 	@ranlib $(NAME)
 

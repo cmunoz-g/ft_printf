@@ -6,16 +6,25 @@ int main()
 	int r1;
 	int r2;
 	
-	char c = 'c';
+	//char c = 'c';
 	char *s = "str";
 	int d = 1;
-	unsigned int u = 3;
-	int x = 111;
-	int X = 222;
-	int i = -2;
-	int *p = &i;
-	i++;
+	//unsigned int u = 3;
+	//int x = 111;
+	//int X = 222;
+	//int i = -2;
+	//int *p = &i;
+	//i++;
 	
+
+	r1 = printf("solo texto%s, %d\n",s, d);
+	r2 = ft_printf("solo texto%s, %d\n",s, d);
+	if (r1 == r2)
+		printf("return values coinciden\n");
+	else
+		printf("return values no coinciden\n");
+
+	/*
 	r1 = printf("solo texto\n");
 	r2 = ft_printf("solo texto\n");
 	if (r1 == r2)
@@ -86,12 +95,14 @@ int main()
 	else
 		printf("return values no coinciden\n");
 
-	/*r1 = printf("endper%");
+	r1 = printf("endper%");
 	r2 = ft_printf("endper%");
 	if (r1 == r2)
 		printf("return values coinciden\n");
 	else
-		printf("return values no coinciden\n");*/
+		printf("return values no coinciden\n");
+
+	*/
 
 	return 0;
 }
