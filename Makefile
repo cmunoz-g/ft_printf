@@ -12,7 +12,6 @@ SRCS = \
 	ft_putptr.c \
 	ft_putstr.c \
 	ft_putunbr.c \
-	main.c \
 
 SOURCE = $(addprefix $(FOLDER), $(SRCS))
 OBJSOURCE = $(addprefix $(OBJFOLDER), $(notdir $(SOURCE:.c=.o)))
