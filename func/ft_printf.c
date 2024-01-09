@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmunoz-g <cmunoz-g@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/09 14:34:16 by cmunoz-g          #+#    #+#             */
+/*   Updated: 2024/01/09 14:45:34 by cmunoz-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_printf_aux(va_list args, const char type, int *count)
@@ -26,27 +38,21 @@ int	ft_printf(const char *str, ...)
 	const char	*ch;
 	int			count;
 
-	va_start(args, str);
-	count = 0;
 	if (str == NULL)
 		return (-1);
+	va_start(args, str);
+	count = 0;
 	ch = str;
 	while (*ch != '\0')
 	{
-		if (*ch == '%')
+		if ((*ch)++ == '%')
 		{
-			ch++;
 			if (*ch != '\0')
-			{
 				ft_printf_aux(args, *ch, &count);
-				ch++;
-			}
 		}
 		else
-		{
 			ft_putchar(*ch, &count);
-			ch++;
-		}
+		ch++;
 	}
 	va_end(args);
 	return (count);
