@@ -10,18 +10,21 @@ OBJS = $(SRCS:%.c=$(OBJFOLDER)%.o)
 
 $(OBJFOLDER)%.o: $(FOLDER)%.c
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 
-$(NAME): $(OBJS)
-	$(CC) -o $(NAME) $(OBJS) $(LDFLAGS)
+$(NAME): $(OBJS) $(INCLUDE)
+	@ar -rcs $(NAME) $(OBJS)
+	@echo "$(NAME) created." 
 
 all: $(NAME)
 
 clean:
 	@rm -rf $(OBJFOLDER)
+	@echo "Object files cleaned."
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "$(NAME) and object files cleaned."
 
 re: fclean all
 
